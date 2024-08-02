@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static',filename='style.css') }}">
+    <!--em Flask não pode colocar o link direto já que existe a possibilidade de mudar de pasta e tals-->
+    <title>{% block titulo %}{% endblock %}</title> 
+</head>
+<body>
+    <nav>
+        <a href="/">Home Page</a>
+        <a href="/contato">Contato</a>
+        <a href="/produtos">Produtos</a>
+    </nav>
+
+    {% block content %}
+    {% endblock %}
+
+    {% block rodape %} 
+    <footer>
+        <p>_________________________________________________</p>
+        <p>Desenvolvido por Alison e Sarah em 2024.</p>
+        <nav>
+            <a href="/termos-de-uso">Termos de Uso</a>
+            <a href="/politicas-de-privacidade">Politicas de privacidade</a>
+            <a href="/como-utilizar">Como Utilizar</a>
+        </nav>
+    </footer>
+    {% endblock %}
+
+</body>
+</html> 
