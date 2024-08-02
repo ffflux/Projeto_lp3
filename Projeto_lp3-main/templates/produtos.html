@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Produtos</title>
+</head>
+<body>
+
+    <nav>
+        <a href="/">Home Page</a>
+        <a href="/contato">Contato</a>
+        <a href="/produtos">Produtos</a>
+    </nav>
+
+    
+    <h1>Nossos produtos</h1>
+    <p>confira nossos produtos</p>
+
+    {% for produto in produtos %}
+    <h2>{{produto.nome}}</h2>
+    <p>{{produto.descricao}}</p>
+    <img src="{{produto.imagem}}" alt="">
+
+    {% endfor %}
+    
+</body>
+
+    <footer>
+        <p>_________________________________________________</p>
+        <p>Desenvolvido por Alison e Sarah em 2024.</p>
+    </footer>
+
+</html>
