@@ -64,17 +64,25 @@ def utilizar():
     return render_template("utilizar.html")
 
 
+#@app.route("/cpf")
+#def gerarCpf():
+#    cpf = CPF() # pode colocar dentro ou fora da função
+#    return cpf.generate(True)
+
+#@app.route("/cnpj")
+#def gerarCnpj():
+#    cnpj = CNPJ() # objeto do tipo CNPJ
+#    return cnpj.generate(True)
+
 @app.route("/cpf")
-def gerarCpf():
-    cpf = CPF() # pode colocar dentro ou fora da função
-    return cpf.generate(True)
+def gcpf():
+    cpf2 = cpf.generate(True)
+    return render_template("cpf.html", cpf = cpf2)
 
 @app.route("/cnpj")
-def gerarCnpj():
-    cnpj = CNPJ() # objeto do tipo CNPJ
-    return cnpj.generate(True)
-
-
+def gcnpj():
+    cnpj2 = cnpj.generate(True)
+    return render_template("cnpj.html", cnpj = cnpj2)
 
 # GET /produtos/cadastro devolver o form
 @app.route("/produtos/cadastro") # devolve o formulario de cadastro do produto 
